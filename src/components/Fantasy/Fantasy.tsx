@@ -1,11 +1,13 @@
 import React from 'react';
+import { SearchBar } from '../SearchBar/SearchBar';
+import { SearchResults } from '../SearchResults/SearchResults';
 
-export const Fantasy = () => {
+export const Fantasy: React.FC = () => {
     return (
         <>
             <h1>Is It Fantasy?</h1>
-            search bar here
-            Search results here
+            <div><SearchBar /></div>
+            <div><SearchResults /></div>
         </>
     )
 }
