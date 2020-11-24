@@ -5,6 +5,7 @@ import { Fantasy } from './Fantasy/Fantasy';
 function App() {
   return (
     <div className="App">
+      <Fantasy />
     </div>
   );
 }
