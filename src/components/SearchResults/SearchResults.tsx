@@ -1,9 +1,6 @@
 import React from 'react';
+import { SearchResultProps } from '../../models/models';
 
-interface SearchResultProps {
-    isFantasy: boolean | undefined;
-    loading: boolean;
-}
 
 export const SearchResults: React.FC<SearchResultProps> = ({ isFantasy, loading }: SearchResultProps) => {
     if (loading) return (

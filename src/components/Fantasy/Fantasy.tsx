@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { SearchResults } from '../SearchResults/SearchResults';
+import { formData } from '../../models/models';
 
 export const Fantasy: React.FC = () => {
     const [isFantasy, setIsFantasy] = useState<boolean>();
     const [loading, setLoading] = useState(false);
 
-    const searchGoogleBooks = (formData: any) => {
+    const searchGoogleBooks = (formData: formData) => {
         setLoading(true);
         const searchParams = formData.search
         axios.get(`http://openlibrary.org/search.json?q=${searchParams}`)

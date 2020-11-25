@@ -1,8 +1,5 @@
 import React, { useReducer } from 'react';
-
-interface SearchBarProps {
-    searchGoogleBooks: (formData: any) => void;
-}
+import { SearchBarProps } from '../../models/models';
 
 const formReducer = (state: any, event: any) =>  {
     return {
@@ -14,7 +11,7 @@ const formReducer = (state: any, event: any) =>  {
 export const SearchBar: React.FC<SearchBarProps> = ({ searchGoogleBooks }: SearchBarProps) => {
     const [formData, setFormData] = useReducer(formReducer, {});
 
-    const onSubmit = (event: any) => {
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         searchGoogleBooks(formData);
     }
