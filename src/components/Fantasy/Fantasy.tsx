@@ -4,12 +4,19 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import { SearchResults } from '../SearchResults/SearchResults';
 
 export const Fantasy: React.FC = () => {
-    const [isFantasy, setIsFantasy] = useState(null);
+    const [isFantasy, setIsFantasy] = useState<boolean>();
 
-    const searchGoogleBooks = () => {
-        axios.get(`http://openlibrary.org/search.json?q=name+of+the+wind`)
+    const searchGoogleBooks = (formData: any) => {
+        const searchParams = formData.search
+        axios.get(`http://openlibrary.org/search.json?q=${searchParams}`)
         .then((response) => {
             const bookGenre = response.data.docs[0].subject;
+
+            if (bookGenre === undefined) {
+                setIsFantasy(false);
+                return;
+            }
+
             const isItFantasy = bookGenre.includes('fantasy');
             setIsFantasy(isItFantasy);
         })

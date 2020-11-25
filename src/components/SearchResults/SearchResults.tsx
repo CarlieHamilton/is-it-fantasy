@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface SearchResultProps {
-    isFantasy: boolean | null;
+    isFantasy: boolean | undefined;
 }
 
 export const SearchResults: React.FC<SearchResultProps> = ({isFantasy }: SearchResultProps) => {

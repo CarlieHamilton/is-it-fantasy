@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
 interface SearchBarProps {
-    searchGoogleBooks: () => void;
+    searchGoogleBooks: (formData: any) => void;
+}
+
+const formReducer = (state: any, event: any) =>  {
+    return {
+        ...state,
+        [event.target.name]: event.target.value
+    }
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ searchGoogleBooks }: SearchBarProps) => {
+    const [formData, setFormData] = useReducer(formReducer, {});
 
     const onSubmit = (event: any) => {
         event.preventDefault();
-        searchGoogleBooks();
+        searchGoogleBooks(formData);
     }
 
     return (
         <form onSubmit={onSubmit}>
-            <input type="search" />
+            <input type="search" name="search" placeholder="Search for the title of a book" onChange={setFormData} />
             <button type="submit">Search</button>
         </form>
     )
