@@ -32,7 +32,9 @@ This runs the app in development mode. It will automatically open the app, or yo
 
 ## Limitations
 
-Currently this app only checks the first book that comes back from the API to see if it has the genre (or "subject", as it is called in the API) "fantasy". There is also only limited error checking. Future iterations would allow you to select which book you meant, for example, and show an image of the book you searched for.
+Currently this app only checks the first book that comes back from the API to see if it has the genre (or "subject", as it is called in the API) "fantasy". This means it often gets it wrong, as sometimes the first result doesn't have the "subject" section.
+
+There is also only limited error checking. Future iterations would allow you to select which book you meant, for example, and show an image of the book you searched for.
 
 ## How To Test
 
