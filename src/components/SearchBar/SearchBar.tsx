@@ -1,12 +1,7 @@
 import React, { useReducer } from 'react';
 import { SearchBarProps } from '../../models/models';
+import { formReducer } from '../../utils/formReducer';
 
-const formReducer = (state: any, event: any) =>  {
-    return {
-        ...state,
-        [event.target.name]: event.target.value
-    }
-}
 
 export const SearchBar: React.FC<SearchBarProps> = ({ searchGoogleBooks }: SearchBarProps) => {
     const [formData, setFormData] = useReducer(formReducer, {});
