@@ -2,11 +2,13 @@
 
 A quick react app that lets you know _Is it fantasy?_
 
-This app queries the Google Books api to let you know if the book you entered in the search bar is fantasy or not.
+This app queries the Open Library API with a book title. It then tells you if that book is fantasy or not.
 
 ## About
 
- I had a simple idea. An app that checks if a book is fantasy or not. It turns out, this is not such a simple idea. After searching through a few APIs, I couldn't find one easily that showed what genre a book is, as well as an image of the book cover.
+ I had a simple idea. An app that checks if a book is fantasy or not.
+
+ It turns out, this is not such a simple idea. After searching through a few APIs, I couldn't find one easily that showed what genre a book is, as well as an image of the book cover.
 
  In the end I have used `Open Library API` to discover what is the genre of a book.
 
