@@ -5,8 +5,10 @@ import { SearchResults } from '../SearchResults/SearchResults';
 
 export const Fantasy: React.FC = () => {
     const [isFantasy, setIsFantasy] = useState<boolean>();
+    const [loading, setLoading] = useState(false);
 
     const searchGoogleBooks = (formData: any) => {
+        setLoading(true);
         const searchParams = formData.search
         axios.get(`http://openlibrary.org/search.json?q=${searchParams}`)
         .then((response) => {
@@ -14,11 +16,12 @@ export const Fantasy: React.FC = () => {
 
             if (bookGenre === undefined) {
                 setIsFantasy(false);
-                return;
+            } else {
+                const isItFantasy = bookGenre.includes('fantasy');
+                setIsFantasy(isItFantasy);
             }
 
-            const isItFantasy = bookGenre.includes('fantasy');
-            setIsFantasy(isItFantasy);
+            setLoading(false);
         })
     };
 
@@ -26,7 +29,7 @@ export const Fantasy: React.FC = () => {
         <>
             <h1>Is It Fantasy?</h1>
             <div><SearchBar searchGoogleBooks={searchGoogleBooks} /></div>
-            <div><SearchResults isFantasy={isFantasy} /></div>
+            <div><SearchResults isFantasy={isFantasy} loading={loading} /></div>
         </>
     )
 }
