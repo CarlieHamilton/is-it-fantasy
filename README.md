@@ -4,7 +4,7 @@ A quick react app that lets you know _Is it fantasy?_
 
 This app queries the [Open Library API](https://openlibrary.org/developers/api) with a book title. It then tells you if that book is fantasy or not.
 
-![screenshot of app](./docs/screenshot.png)
+![screenshot of app](./docs/is-it-fantasy.png)
 
 ## About
 
