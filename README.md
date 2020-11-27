@@ -12,7 +12,7 @@ This app queries the [Open Library API](https://openlibrary.org/developers/api) 
 
  It turns out, this is not such a simple idea. After searching through a few APIs, I couldn't find one easily that showed what genre a book is, as well as an image of the book cover.
 
- In the end I have used `Open Library API` to discover what is the genre of a book.
+ In the end I have used [Open Library API](https://openlibrary.org/developers/api) to discover what is the genre of a book.
 
  In this app, a user simply types the title of a book into the search bar, and after the click to search they will be told if the book is fantasy or not.
 
